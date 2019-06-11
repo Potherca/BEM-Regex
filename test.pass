@@ -4,8 +4,10 @@
 
 /* A normal class */
 .one
+.a
 
 /* Classes with dash */
+.a-b
 .one-two
 .one-two-three
 .one-two-i-n-f-i-n-i-t-y
@@ -16,18 +18,35 @@
 .other-block
 
 // Block + Element
+.a__b
+.a-b__element
+.a-b__c-d
+
 .block__element
 .other-block__element
 .block__other-element
 .other-block__other-element
 
 // Block + Modifier
+.a--b
+.a-b--c
+.a--b-c
+.a-b--c-d
+
 .block--modifier
 .other-block--modifier
 .block--other-modifier
 .other-block--other-modifier
 
 // Block + Modifier Name + Modifier Value
+.a--b--c
+.a-b--c--d
+.a--b-c--d
+.a--b--c-d
+.a-b--c--d-e
+.a-b--c-d--e
+.a--b-c--d-e
+
 .block--modifier--value
 .block--modifier--other-value
 .other-block--modifier--value
@@ -38,6 +57,15 @@
 .other-block--other-modifier--other-value
 
 // Block + Element + Modifier
+.a__b--c
+.a__b--c-d
+.a__b-c--d
+.a__b-c--d-e
+.a-b__c--d
+.a-b__c--d-e
+.a-b__d-e--f
+.a-b__d-e--f-g
+
 .block__element--modifier
 .block__element--other-modifier
 .block__other-element--modifier
@@ -48,6 +76,23 @@
 .other-block__other-element--other-modifier
 
 // Block + Element + Modifier Name + Modifier Value
+.a__b--c--d
+.a__b--c--d-e
+.a__b--c-d--e
+.a__b--c-d--e-f
+.a__b-c--d--e
+.a__b-c--d--e-f
+.a__b-c--d-e--f
+.a__b-c--d-e--f-g
+.a-b__c--d--e
+.a-b__c--d--e-f
+.a-b__c--d-e--f
+.a-b__c--d-e--f-g
+.a-b__d-e--f--g
+.a-b__d-e--f--g-h
+.a-b__d-e--f-g--h
+.a-b__d-e--f-g--h-i
+
 .block__element--modifier--value
 .block__element--modifier--other-value
 .block__element--other-modifier--value
