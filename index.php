@@ -1,16 +1,20 @@
 <!doctype html>
 <?php
 
-function get_subjects_from_file($path) {
-    return array_map('trim', array_filter(file($path), function ($line) {
+function get_subjects($subjects) {
+    return array_map('trim', array_filter($subjects, function ($line) {
         return trim($line) !== '' && $line{0} === '.';
     }));
 }
 
-$allowedMatches = get_subjects_from_file(__DIR__ . '/test.pass');
-$unMatches = get_subjects_from_file(__DIR__ . '/test.fail');
+$fullPassingMatches = file(__DIR__ . '/test.pass');
+$fullFailingMatches = file(__DIR__ . '/test.fail');
 
-$subjects = implode("\n", array_merge($allowedMatches, $unMatches));
+$passingMatches = get_subjects($fullPassingMatches);
+$failingMatches = get_subjects($fullFailingMatches);
+
+$fullSubjects = implode("\n", array_merge($fullPassingMatches, $fullFailingMatches));
+$subjects = implode("\n", array_merge($passingMatches, $failingMatches));
 
 $regexs = file(__DIR__ . '/BEM.regex');
 $regexs = array_filter($regexs, function ($pattern) {
@@ -18,7 +22,7 @@ $regexs = array_filter($regexs, function ($pattern) {
 });
 
 $result = '';
-array_walk($regexs, function ($regex) use (&$result, $allowedMatches, $subjects) {
+array_walk($regexs, function ($regex) use (&$result, $passingMatches, $subjects) {
     $regex = trim($regex);
 
     $pattern = vsprintf("/%s/m", [$regex]);
@@ -27,8 +31,8 @@ array_walk($regexs, function ($regex) use (&$result, $allowedMatches, $subjects)
 
     // @TODO: Mark test as error if $match === false
 
-    $shouldMatch = array_diff($allowedMatches, $matches[0]);
-    $shouldNotMatch = array_diff($matches[0], $allowedMatches);
+    $shouldMatch = array_diff($passingMatches, $matches[0]);
+    $shouldNotMatch = array_diff($matches[0], $passingMatches);
 
     if ($shouldMatch === [] && $shouldNotMatch === []) {
         $result .=  '<p><span class="pass">Success.</span> <code>' . $encodedPattern .'</code></p>';
@@ -85,7 +89,7 @@ array_walk($regexs, function ($regex) use (&$result, $allowedMatches, $subjects)
 <h2>The text matched against</h2>
 <details>
     <summary>Click to open</summary>
-    <pre><code><?= $subjects; ?></code></pre>
+    <pre><code><?= $fullSubjects; ?></code></pre>
 </details>
 </body>
 </html>
