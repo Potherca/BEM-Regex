@@ -1,0 +1,68 @@
+/******************************************************************************\
+|*                          These SHOULD be matched                           *|
+\******************************************************************************/
+
+/* A normal class */
+.one
+
+/* Classes with dash */
+.one-two
+.one-two-three
+.one-two-i-n-f-i-n-i-t-y
+
+/* BEM (Block Element Modifier) classes */
+// Block Only
+.block
+.other-block
+
+// Block + Element
+.block__element
+.other-block__element
+.block__other-element
+.other-block__other-element
+
+// Block + Modifier
+.block--modifier
+.other-block--modifier
+.block--other-modifier
+.other-block--other-modifier
+
+// Block + Modifier Name + Modifier Value
+.block--modifier--value
+.block--modifier--other-value
+.other-block--modifier--value
+.other-block--modifier--other-value
+.block--other-modifier--value
+.block--other-modifier--other-value
+.other-block--other-modifier--value
+.other-block--other-modifier--other-value
+
+// Block + Element + Modifier
+.block__element--modifier
+.block__element--other-modifier
+.block__other-element--modifier
+.block__other-element--other-modifier
+.other-block__element--modifier
+.other-block__element--other-modifier
+.other-block__other-element--modifier
+.other-block__other-element--other-modifier
+
+// Block + Element + Modifier Name + Modifier Value
+.block__element--modifier--value
+.block__element--modifier--other-value
+.block__element--other-modifier--value
+.block__element--other-modifier--other-value
+.block__other-element--modifier--value
+.block__other-element--modifier--other-value
+.block__other-element--other-modifier--value
+.block__other-element--other-modifier--other-value
+.other-block__element--modifier--value
+.other-block__element--modifier--other-value
+.other-block__element--other-modifier--value
+.other-block__element--other-modifier--other-value
+.other-block__other-element--modifier--value
+.other-block__other-element--modifier--other-value
+.other-block__other-element--other-modifier--value
+.other-block__other-element--other-modifier--other-value
+
+/*EOF*/
