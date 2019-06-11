@@ -1,5 +1,13 @@
 # The search for a Regex to match BEM CSS class-names
 
+## TL;DR
+
+Use this regular expression to match BEM class-names:
+
+```
+^\.[a-z]([a-z0-9-]+-?)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}$
+```
+
 ## Using Hyphenated BEM
 
 As part of an initiative to use a more standardised approach to writing CSS, at
