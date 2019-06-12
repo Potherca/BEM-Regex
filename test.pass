@@ -10,7 +10,8 @@
 .a-b
 .one-two
 .one-two-three
-.one-two-i-n-f-i-n-i-t-y
+.one-two-three-four
+.one-two-three-i-n-f-i-n-i-t-y
 
 /* BEM (Block Element Modifier) classes */
 // Block Only
@@ -110,4 +111,3 @@
 .other-block__other-element--other-modifier--value
 .other-block__other-element--other-modifier--other-value
 
-/*EOF*/
